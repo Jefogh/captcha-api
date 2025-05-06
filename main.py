@@ -14,7 +14,10 @@ IDX2CHAR = {i: c for c, i in CHAR2IDX.items()}
 NUM_CLASSES = len(CHARSET)
 NUM_POS = 5
 EXPECTED_SIZE = (224, 224)
-ONNX_MODEL_PATH = "assets/holako_bag.onnx"
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ONNX_MODEL_PATH = os.path.join(BASE_DIR, "assets", "holako_bag.onnx")
+
 
 # -----------------------
 # Load ONNX model once
